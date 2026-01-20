@@ -21,6 +21,16 @@ pip install -r requirements.txt
 python src/main.py --category sports --min-edge 0.02 --stake 200
 ```
 
+## Web UI
+
+Run the dashboard to scan markets and visualize opportunities:
+
+```bash
+python src/web_app.py
+```
+
+Then open http://localhost:8000 to launch the UI.
+
 ### Example output
 ```
 Event: nba-finals-2025
