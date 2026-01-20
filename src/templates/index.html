@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polymarket Sports Arbitrage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Polymarket Gamma API</p>
+          <h1>Sports Arbitrage Radar</h1>
+          <p class="subtitle">
+            Scan live sports markets for cross-market pricing gaps and generate a ready-to-trade
+            order bundle.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="field">
+            <label>Category</label>
+            <input id="category" value="sports" />
+          </div>
+          <div class="field">
+            <label>Min edge</label>
+            <input id="min-edge" type="number" step="0.01" value="0.02" />
+          </div>
+          <div class="field">
+            <label>Stake per bundle ($)</label>
+            <input id="stake" type="number" step="10" value="250" />
+          </div>
+          <div class="field">
+            <label>Max markets</label>
+            <input id="max-markets" type="number" step="50" value="200" />
+          </div>
+          <button id="scan-btn">Run arbitrage scan</button>
+          <p id="status" class="status">Ready.</p>
+        </div>
+      </header>
+
+      <section class="results">
+        <div class="results-header">
+          <h2>Detected opportunities</h2>
+          <p>Best-priced outcomes grouped by event.</p>
+        </div>
+        <div id="results-grid" class="results-grid"></div>
+      </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
